@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da3f4340-a5dd-40c7-8f74-c915683726e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/Rostlab/prot_t5_xl_half_uniref50-enc/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/Rostlab/prot_t5_xl_half_uniref50-enc/pytorch_model.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/Rostlab/prot_t5_xl_half_uniref50-enc/special_tokens_map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/Rostlab/prot_t5_xl_half_uniref50-enc/spiece.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/Rostlab/prot_t5_xl_half_uniref50-enc/tokenizer_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/elmo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/emd_computation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/emd_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/protT5/sec_struct_checkpoint/secstruct_checkpoint.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/prot_n.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/seqvec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/test.fasta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testnp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/readh5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasetpre/dataprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasetpre/dataprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasetpre/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasetpre/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Graphsage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/LuGTP.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/LuGTP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Sagpool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/assess.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/assess.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/backbones/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/backbones/pretrained_transformer_backbone.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/elmo.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/token_embedders/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/allennlp/modules/token_embedders/elmo_token_embedder.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/PyCharm2022.1/python_stubs/-356189805/h5py/h5.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EOfZQkaSeuJpIDKJ1ZoJu2Dc7d" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lujiale/Desktop/Gdeep/main.py",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Gdeep" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\lujiale\.conda\envs\ludeep\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="seqvec" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gdeep" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro/seqvec.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testnp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gdeep" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/testnp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.seqvec" />
+      <item itemvalue="Python.testnp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.seqvec" />
+        <item itemvalue="Python.testnp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da3f4340-a5dd-40c7-8f74-c915683726e7" name="Changes" comment="" />
+      <created>1662471608196</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662471608196</updated>
+      <workItem from="1662471609578" duration="6752000" />
+      <workItem from="1662479938807" duration="1941000" />
+      <workItem from="1662514020628" duration="20505000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/.conda/envs/ludeep/Lib/site-packages/h5py/version.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Gdeep$testnp.coverage" NAME="testnp Coverage Results" MODIFIED="1662524050055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Gdeep$seqvec.coverage" NAME="seqvec Coverage Results" MODIFIED="1662524883387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datasetpre/feature_computation/esm_pro" />
+    <SUITE FILE_PATH="coverage/Gdeep$main.coverage" NAME="main Coverage Results" MODIFIED="1662548724055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

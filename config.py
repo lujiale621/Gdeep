@@ -1,15 +1,21 @@
 root='D:/'
-train_file_name=root+"data/PhosVarDeep_datasets/S,T/set1/S,T-train-set1-test.csv"
+train_file_name=root+"data/PhosVarDeep_datasets/S,T/set1/S,T-train-set1.csv"
+val_file = root+"data/PhosVarDeep_datasets/S,T/set1/S,T-val-set1.csv"
+test_file = root+"data/PhosVarDeep_datasets/S,T/set1/S,T-test-set1.csv"
 cpath = root+"data/cmap/cmap/"
 embdict_path = root+"data/embdict.npz"
 emb_path=root+'data/emb/'
 graph_path=root+'data/graph/'
 pyggraph_path=root+'data/pyggraph/'
 emb_map = root+"data/uniprot_sprot.map"
-epochs=10
-lr=0.0005
+epochs=50
+lr=0.05
 weight_decay=0.0001
 pssm_root_url =root+ 'data/pssm/out'
 pssm_fn = root+"data/pssm/matrix_25"
 dssp_root_url = root+'data/dssp/dssp'
 dssp_fn = root+"data/dssp/dssp_matrix_25"
+protein_faste=root+"data/uniprot_sprot.fasta"
+
+dropout_ratio=0.5
+batchsize=32

@@ -7,14 +7,17 @@ import scipy.sparse as spp
 import numpy as np
 import torch
 from dgl import save_graphs, load_graphs
-from torch_geometric.data import data, InMemoryDataset, Batch
+
 
 from config import *
 from datasetpre.emdata import Embdict, dictdata, Emdata
 from datasetpre.feature_computation.dssp_computation.compute import loaddsspfile
+from datasetpre.feature_computation.esm_pro.emd_product import getproteinemd
+# from datasetpre.feature_computation.esm_pro.prot_n import getemd
+# from datasetpre.feature_computation.esm_pro.seqvec import protein_emd
 from datasetpre.feature_computation.pssm_computation.compute import load_fasta_and_compute
 
-dictdata = Emdata()
+# dictdata = Emdata()
 letterDict = {}
 letterDict["A"] = 0
 letterDict["C"] = 1
@@ -43,18 +46,24 @@ def checkinfo(sseq, protein, position):
     # 检查序列是否存在
     if sseq == 'none':
         Tag = False
-
+    #检查dssp是否存在
+    dsspurl=dssp_fn+"/"+protein + '_' + str(position)+".dssp"
+    if os.path.exists(dsspurl) == False:
+        Tag = False
     # 检查蛋白质cmap
     url = cpath + protein + '.cm'
     if os.path.exists(url) == False:
         Tag = False
-    # 检查embed是否存在
+    # # 检查embed是否存在
+    # emd_tag = os.path.exists(emb_path + protein + ".em")
+    # if emd_tag==False:
+    #     Tag=False
 
-    mappostion = dictdata.getTag(protein)
-    if mappostion == -1:
-        Tag = False
-    if position > len(sseq):
-        Tag = False
+    # mappostion = dictdata.getTag(protein)
+    # if mappostion == -1:
+    #     Tag = False
+    # if position > len(sseq):
+    #     Tag = False
     return Tag
 def getcmap(url, cmdata):
     with open(url, 'rb') as rf:
@@ -71,7 +80,7 @@ def getcmap(url, cmdata):
             if raw_row[y] == '1':
                 ret[x][y] = 1
     return ret
-embdict = Embdict()
+# embdict = Embdict()
 def getseqMatrix_Label(train_file_name, window_size=51, empty_aa='*'):
     prot = []  # list of protein name
     pos = []  # list of position with protein name
@@ -210,14 +219,30 @@ def productGraph(train_file_name):
             label=int(row[0])
             if checkinfo(sseq, protein, position) == False:
                 continue
+            #检查嵌入了特征的图是否存在
             tag = os.path.exists(graph_path + protein+".g")
             if tag == False:
+                #如果不存在图 生成特征 获取cmap
                 url = cpath + protein + '.cm'
-                g_embed = embdict.getTag(protein_name=protein)
-                g_embed = torch.from_numpy(g_embed)
+                emd_tag = os.path.exists(emb_path + protein + ".npy")
+                if emd_tag == False:
+                    da=[]
+                    da.append(protein)
+                    da.append(sseq)
+                    # dat = protein_emd(da)
+                    g_embed=dat[1]
+                    np.save(emb_path + protein + ".npy", dat)
+                else:
+                    dat = np.load(emb_path + protein + ".npy", allow_pickle='TRUE')
+                    g_embed = dat[1]
+                # g_embed = embdict.getTag(protein_name=protein)
+                # g_embed = torch.from_numpy(g_embed)
                 cmdata = getcmap(url, cmdata)
                 if len(g_embed) != len(cmdata):
-                    cmdata = cmdata[:len(g_embed), :len(g_embed)]
+                    if len(g_embed)< len(cmdata):
+                        cmdata = cmdata[:len(g_embed), :len(g_embed)]
+                    if len(g_embed)>len(cmdata):
+                        g_embed = g_embed[:len(cmdata)]
                 adj = spp.coo_matrix(cmdata)
                 G = dgl.from_scipy(adj)
                 G.ndata['feat'] = g_embed.float()
@@ -252,44 +277,49 @@ def listclass_to_one_hot(list, isnumpy=True):
         one_hot_list = torch.zeros(list_len, 2).scatter_(1, one_hot_list, 1)
     return one_hot_list
 
-def pygnewgraph(train_file_name):
-    labels = []
-    Glist = []
-    positionlist = []
-    with open(train_file_name, 'r') as rf:
-        reader = csv.reader(rf)
-        next(reader)
-        for row in reader:
-            cmdata = []
-            sseq = row[3]
-            position = int(row[2])
-            protein = row[1]
-            label = int(row[0])
-            if checkinfo(sseq, protein, position) == False:
-                continue
-            tag = os.path.exists(pyggraph_path + protein + ".pt")
-            if tag == False:
-                url = cpath + protein + '.cm'
-                g_embed = embdict.getTag(protein_name=protein)
-                g_embed = torch.from_numpy(g_embed)
-                cmdata = getcmap(url, cmdata)
-                if len(g_embed) != len(cmdata):
-                    cmdata = cmdata[:len(g_embed), :len(g_embed)]
-                tmp_coo = spp.coo_matrix(cmdata)
-                values = tmp_coo.data
-                indices = np.vstack((tmp_coo.row, tmp_coo.col))
-                i = torch.LongTensor(indices)
-                v = torch.LongTensor(values)
-                edge_index = torch.sparse_coo_tensor(i, v, tmp_coo.shape)
-                x=g_embed.float()
-                y=torch.tensor(label)
-                g = data.Data(edge_index=edge_index, x=x,y=y)
-                torch.save([g],pyggraph_path+protein+".pt")
-            else:
-                g = torch.load(pyggraph_path+protein+".pt")[0]
-                Glist.append(g)
-
-        return Glist
+# def pygnewgraph(train_file_name):
+#     labels = []
+#     Glist = []
+#     positionlist = []
+#     with open(train_file_name, 'r') as rf:
+#         reader = csv.reader(rf)
+#         next(reader)
+#         for row in reader:
+#             cmdata = []
+#             sseq = row[3]
+#             position = int(row[2])
+#             protein = row[1]
+#             label = int(row[0])
+#             if checkinfo(sseq, protein, position) == False:
+#                 continue
+#             tag = os.path.exists(pyggraph_path + protein + ".pt")
+#             if tag == False:
+#                 url = cpath + protein + '.cm'
+#                 emd_tag = os.path.exists(emb_path + protein + ".em")
+#                 if emd_tag == False:
+#                     da = (protein, sseq)
+#                     dat = getproteinemd(da)
+#                     g_embed = dat[2]
+#                 # g_embed = embdict.getTag(protein_name=protein)
+#                 # g_embed = torch.from_numpy(g_embed)
+#                 cmdata = getcmap(url, cmdata)
+#                 if len(g_embed) != len(cmdata):
+#                     cmdata = cmdata[:len(g_embed), :len(g_embed)]
+#                 tmp_coo = spp.coo_matrix(cmdata)
+#                 values = tmp_coo.data
+#                 indices = np.vstack((tmp_coo.row, tmp_coo.col))
+#                 i = torch.LongTensor(indices)
+#                 v = torch.LongTensor(values)
+#                 edge_index = torch.sparse_coo_tensor(i, v, tmp_coo.shape)
+#                 x=g_embed.float()
+#                 y=torch.tensor(label)
+#                 g = data.Data(edge_index=edge_index, x=x,y=y)
+#                 torch.save([g],pyggraph_path+protein+".pt")
+#             else:
+#                 g = torch.load(pyggraph_path+protein+".pt")[0]
+#                 Glist.append(g)
+#
+#         return Glist
 
 
 

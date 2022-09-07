@@ -4,7 +4,23 @@ from matplotlib import pyplot as plt
 from sklearn import metrics
 from sklearn.metrics import auc
 from torch import Tensor
+def calculate_auc(roc_poslist, reallab):
+    y = reallab
+    scores = roc_poslist
+    fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=1)
 
+    roc_auc = auc(fpr, tpr)
+
+    plt.plot(fpr, tpr, 'k--', label='ROC (area = {0:.2f})'.format(roc_auc), lw=2)
+
+    plt.xlim([-0.05, 1.05])  # 设置x、y轴的上下限，以免和边缘重合，更好的观察图像的整体
+    plt.ylim([-0.05, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')  # 可以使用中文，但需要导入一些库即字体
+    plt.title('ROC Curve')
+    plt.legend(loc="lower right")
+
+    plt.show()
 def calculate_indicators(epoch, pre_lablist, real_lablist):
     try:
         # pre_lablist是标签预测值 real_lablist标签真实值
